@@ -1,0 +1,5 @@
+/srv/lab/
+├── compose/      one subfolder per app, each holding its compose.yaml
+├── data/         app databases and config — SMALL, back this up (Ch. 11)
+├── media/        your movies, music, photos — BIG, back this up differently
+└── backup/       where other machines' backups land

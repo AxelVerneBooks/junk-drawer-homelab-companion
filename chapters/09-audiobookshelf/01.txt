@@ -1,0 +1,21 @@
+/srv/lab/media/audiobooks/
+├── Author Name/
+│   ├── Series Name/
+│   │   ├── 1 - Book Title/
+│   │   │   ├── cover.jpg
+│   │   │   ├── chapter1.mp3
+│   │   │   ├── chapter2.mp3
+│   │   │   └── ...
+│   │   ├── 2 - Next Book/
+│   │   └── ...
+│   └── Standalone Book Title/
+│       ├── cover.jpg
+│       └── chapters.mp3
+└── ...
+
+/srv/lab/media/podcasts/
+├── Podcast Series Name/
+│   ├── 2024-01-15 - Episode Title.mp3
+│   ├── 2024-01-22 - Episode Title.mp3
+│   └── ...
+└── ...

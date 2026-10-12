@@ -1,0 +1,6 @@
+cameras:
+  phone_camera:
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.1.50:4747/
+          input_args: -rtsp_transport tcp

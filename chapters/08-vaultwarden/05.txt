@@ -1,0 +1,4 @@
+vault.local {
+  tls internal                                   # local CA, self-signed certs
+  reverse_proxy vaultwarden:80
+}

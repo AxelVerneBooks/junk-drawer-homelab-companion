@@ -1,0 +1,1077 @@
+[
+ {
+  "chapter": 1,
+  "slug": "whats-in-the-drawer",
+  "title": "Chapter 1 \u2014 What's in the Drawer",
+  "dir": "chapters/01-whats-in-the-drawer",
+  "blocks": [
+   {
+    "file": "01.txt",
+    "lang": "",
+    "section": "Your inventory worksheet",
+    "context": "Fill this in before Chapter 2. It feeds the Subscription Killer sheet and the chapter picker.",
+    "lines": 6
+   }
+  ]
+ },
+ {
+  "chapter": 2,
+  "slug": "subscription-killer",
+  "title": "Chapter 2 \u2014 Subscription Killer",
+  "dir": "chapters/02-subscription-killer",
+  "blocks": [
+   {
+    "file": "01.txt",
+    "lang": "",
+    "section": "The worksheet",
+    "context": "Open your bank/card statements for the last two months. Find every recurring charge that's software, storage, or media. ",
+    "lines": 13
+   }
+  ]
+ },
+ {
+  "chapter": 3,
+  "slug": "the-boring-foundation",
+  "title": "Chapter 3 \u2014 The Boring Foundation",
+  "dir": "chapters/03-the-boring-foundation",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "Path B \u2014 Laptop or desktop",
+    "context": "### Laptop-specific: don't let it sleep when you close the lid",
+    "lines": 3
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "Path B \u2014 Laptop or desktop",
+    "context": "Leave the battery in and plugged in. Modern Linux throttles charging sensibly on most business laptops. If the battery i",
+    "lines": 2
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "Path B \u2014 Laptop or desktop",
+    "context": "Some Broadcom Wi-Fi chips need a non-free firmware package. Ethernet always works. If Wi-Fi is missing after install, on",
+    "lines": 1
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "Everybody: the ten-command setup",
+    "context": "SSH into the device. Paste these in order.",
+    "lines": 22
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "Everybody: the ten-command setup",
+    "context": "Docker Compose is a text file (compose.yaml) that says \"run these containers, with these folders, on these ports.\" Every",
+    "lines": 4
+   },
+   {
+    "file": "06.txt",
+    "lang": "",
+    "section": "Everybody: the ten-command setup",
+    "context": "### The folder layout, explained once",
+    "lines": 5
+   },
+   {
+    "file": "07.sh",
+    "lang": "bash",
+    "section": "Check your drives before you trust them",
+    "context": "Old drives lie about their health until they don't. Before any drive holds something you care about:",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 4,
+  "slug": "pi-hole",
+  "title": "Chapter 4 \u2014 First Light I: Pi-hole on the Pi You Forgot",
+  "dir": "chapters/04-pi-hole",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Docker path (Pi 3 and up, or any laptop)",
+    "context": "## The build \u2014 Docker path (Pi 3 and up, or any laptop)",
+    "lines": 1
+   },
+   {
+    "file": "02-compose.yml",
+    "lang": "yaml",
+    "section": "The build \u2014 Docker path (Pi 3 and up, or any laptop)",
+    "context": "Create compose.yaml:",
+    "lines": 17
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Docker path (Pi 3 and up, or any laptop)",
+    "context": "Before starting it, free up port 53 \u2014 Ubuntu and newer Raspberry Pi OS run a local DNS stub that squats on it:",
+    "lines": 3
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Docker path (Pi 3 and up, or any laptop)",
+    "context": "Then:",
+    "lines": 2
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build \u2014 bare-metal path (Pi 1, Pi 2, original Zero, or \"I don't want Docker on this\")",
+    "context": "Pi-hole's own installer is excellent and this is the path I'd actually use on the oldest boards:",
+    "lines": 1
+   }
+  ]
+ },
+ {
+  "chapter": 5,
+  "slug": "jellyfin",
+  "title": "Chapter 5 \u2014 First Light II: Old Laptop \u2192 Jellyfin",
+  "dir": "chapters/05-jellyfin",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "## The build",
+    "lines": 1
+   },
+   {
+    "file": "02-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Create compose.yaml:",
+    "lines": 17
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Before starting, if you have an Intel CPU (8th-gen or newer), enable hardware transcoding on the host. This is a one-tim",
+    "lines": 2
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Now start Jellyfin:",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 6,
+  "slug": "old-phone",
+  "title": "Chapter 6 \u2014 First Light III: Old Phone \u2192 Camera, Dashboard, or Sensor",
+  "dir": "chapters/06-old-phone",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Android: IP Webcam or DroidCam",
+    "context": "That's it. The phone is now a webcam. You can view it in VLC (File \u2192 Open Network Stream \u2192 paste the URL), in Home Assis",
+    "lines": 1
+   },
+   {
+    "file": "02.yml",
+    "lang": "yaml",
+    "section": "The build \u2014 Android: IP Webcam or DroidCam",
+    "context": "To feed it into Frigate (motion detection and recording) later, use the /h264pcm.mp4 or /mjpeg endpoint:",
+    "lines": 7
+   },
+   {
+    "file": "03.yml",
+    "lang": "yaml",
+    "section": "The build \u2014 Android: IP Webcam or DroidCam",
+    "context": "Same story: feed it into Frigate, VLC, or Home Assistant. DroidCam supports H.264 natively, which is better for CPU usag",
+    "lines": 6
+   }
+  ]
+ },
+ {
+  "chapter": 7,
+  "slug": "immich",
+  "title": "Chapter 7 \u2014 Break Up With Big Tech I: Google Photos \u2192 Immich",
+  "dir": "chapters/07-immich",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build \u2014 storage and server",
+    "context": "Pick a device with space. A laptop works. A Raspberry Pi 4 works if you're okay waiting longer for searches. If you have",
+    "lines": 1
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build \u2014 storage and server",
+    "context": "Download the official compose files:",
+    "lines": 2
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build \u2014 storage and server",
+    "context": "Edit .env:",
+    "lines": 1
+   },
+   {
+    "file": "04.txt",
+    "lang": "",
+    "section": "The build \u2014 storage and server",
+    "context": "Set these three things:",
+    "lines": 8
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build \u2014 storage and server",
+    "context": "Create the upload directory:",
+    "lines": 1
+   },
+   {
+    "file": "06.sh",
+    "lang": "bash",
+    "section": "The build \u2014 storage and server",
+    "context": "Start Immich:",
+    "lines": 2
+   },
+   {
+    "file": "07.sh",
+    "lang": "bash",
+    "section": "The build \u2014 import from Google Takeout",
+    "context": "Install immich-go, the tool that reassembles this correctly:",
+    "lines": 12
+   },
+   {
+    "file": "08.sh",
+    "lang": "bash",
+    "section": "The build \u2014 import from Google Takeout",
+    "context": "Run the import:",
+    "lines": 5
+   },
+   {
+    "file": "09.yml",
+    "lang": "yaml",
+    "section": "The machine-learning note",
+    "context": "On a Raspberry Pi: disable it entirely. Edit docker-compose.yml, find the immich-machine-learning service, and change DI",
+    "lines": 4
+   }
+  ]
+ },
+ {
+  "chapter": 8,
+  "slug": "vaultwarden",
+  "title": "Chapter 8 \u2014 Break Up With Big Tech II: Password Manager \u2192 Vaultwarden",
+  "dir": "chapters/08-vaultwarden",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "## The build",
+    "lines": 1
+   },
+   {
+    "file": "02-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Create compose.yaml:",
+    "lines": 40
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Generate an admin token. This is the password to the /admin page (where you manage users without signups):",
+    "lines": 1
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "It will ask for a password. Type something long and random. Copy the output (an Argon2 hash), and save it to a .env file",
+    "lines": 1
+   },
+   {
+    "file": "05.txt",
+    "lang": "",
+    "section": "The build",
+    "context": "Then create the Caddyfile:",
+    "lines": 4
+   },
+   {
+    "file": "06.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Start it:",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 9,
+  "slug": "audiobookshelf",
+  "title": "Chapter 9 \u2014 Break Up With Big Tech III: Audiobooks & Podcasts \u2192 Audiobookshelf",
+  "dir": "chapters/09-audiobookshelf",
+  "blocks": [
+   {
+    "file": "01.txt",
+    "lang": "",
+    "section": "Organizing the library before you start",
+    "context": "Audiobookshelf is smart about parsing folder structure, but it helps if you follow the recipe:",
+    "lines": 21
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "## The build",
+    "lines": 1
+   },
+   {
+    "file": "03-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Create compose.yaml:",
+    "lines": 14
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Create the directories:",
+    "lines": 2
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Start it:",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 10,
+  "slug": "tailscale",
+  "title": "Chapter 10 \u2014 Fortress I: Reach It From Anywhere Without Opening a Port (Tailscale)",
+  "dir": "chapters/10-tailscale",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "SSH into the device (not into a container):",
+    "lines": 1
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Then authenticate:",
+    "lines": 1
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Confirm:",
+    "lines": 1
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Subnet router \u2014 the machine in the lab acts as a gateway to the entire home network, so you can reach devices that aren'",
+    "lines": 1
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "IP forwarding \u2014 the kernel needs to route packets between the tailnet and the home network. Make it permanent:",
+    "lines": 2
+   },
+   {
+    "file": "06.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "If one Pi is always on and has a good internet connection, make it an exit node. All traffic from your phone can tunnel ",
+    "lines": 1
+   },
+   {
+    "file": "07.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "On the lab machine:",
+    "lines": 2
+   },
+   {
+    "file": "08.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Update the DOMAIN in Vaultwarden's compose.yaml:",
+    "lines": 2
+   },
+   {
+    "file": "09.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Tailscale Funnel \u2014 if you want to expose one of these apps to the public internet (a webhook receiver, a demo link), use",
+    "lines": 1
+   }
+  ]
+ },
+ {
+  "chapter": 11,
+  "slug": "backups",
+  "title": "Chapter 11 \u2014 Fortress II: Backups That Actually Restore",
+  "dir": "chapters/11-backups",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "On the primary lab machine:",
+    "lines": 4
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Plug in the USB drive. Find it:",
+    "lines": 1
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Let's say it's /dev/sdb. Wipe it completely:",
+    "lines": 5
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Mount it:",
+    "lines": 3
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "### Step 3: Initialize a restic repository on the USB drive",
+    "lines": 1
+   },
+   {
+    "file": "06.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "### Step 4: Back up /srv/lab/data to USB",
+    "lines": 1
+   },
+   {
+    "file": "07.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "This is a dry run the first time. Restic will scan, compress, and encrypt everything in /srv/lab/data. Watch the progres",
+    "lines": 1
+   },
+   {
+    "file": "08.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Before backing up, dump the databases:",
+    "lines": 11
+   },
+   {
+    "file": "09.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Then back up /srv/lab/backup too:",
+    "lines": 1
+   },
+   {
+    "file": "10.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "On the remote machine (Pi or laptop at your relative's house, also on Tailscale), initialize a second restic repository:",
+    "lines": 1
+   },
+   {
+    "file": "11.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "From your primary lab machine, over Tailscale:",
+    "lines": 5
+   },
+   {
+    "file": "12.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Restic will ask for the SSH password (the relative's machine password). Store this in an environment variable or a passw",
+    "lines": 2
+   },
+   {
+    "file": "13.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Then backup over the network:",
+    "lines": 3
+   },
+   {
+    "file": "14.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Sign up for a Backblaze B2 account. Create an API key and a bucket for backups. Restic talks to B2 as if it's S3:",
+    "lines": 6
+   },
+   {
+    "file": "15.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Then:",
+    "lines": 1
+   },
+   {
+    "file": "16.ini",
+    "lang": "ini",
+    "section": "The build",
+    "context": "Create /etc/systemd/system/lab-backup.service:",
+    "lines": 20
+   },
+   {
+    "file": "17.ini",
+    "lang": "ini",
+    "section": "The build",
+    "context": "Create /etc/systemd/system/lab-backup.timer:",
+    "lines": 10
+   },
+   {
+    "file": "18.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Enable it:",
+    "lines": 3
+   },
+   {
+    "file": "19.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Check the logs:",
+    "lines": 1
+   },
+   {
+    "file": "20.sh",
+    "lang": "bash",
+    "section": "Make it good",
+    "context": "Prune old snapshots: After a year, your repository is gigabytes of old snapshots. Restic can delete old backups:",
+    "lines": 2
+   },
+   {
+    "file": "21.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "USB unmounts between backups \u2192 Mount points are temporary. Use /etc/fstab to make it permanent:",
+    "lines": 1
+   },
+   {
+    "file": "22.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "Backup suddenly takes 3 hours \u2192 USB drive is degrading. Check SMART:",
+    "lines": 1
+   },
+   {
+    "file": "23.sh",
+    "lang": "bash",
+    "section": "Restore drill (mandatory)",
+    "context": "The USB is plugged in and mounted. Pick a file from /srv/lab/data \u2014 let's say a Vaultwarden password:",
+    "lines": 2
+   },
+   {
+    "file": "24.sh",
+    "lang": "bash",
+    "section": "Restore drill (mandatory)",
+    "context": "Now restore:",
+    "lines": 2
+   },
+   {
+    "file": "25.sh",
+    "lang": "bash",
+    "section": "Restore drill (mandatory)",
+    "context": "You dumped the Immich database to /srv/lab/backup/immich-db.sql. Restore it:",
+    "lines": 2
+   },
+   {
+    "file": "26.sh",
+    "lang": "bash",
+    "section": "Restore drill (mandatory)",
+    "context": "Now do the same from the remote backup (over Tailscale):",
+    "lines": 3
+   },
+   {
+    "file": "27.sh",
+    "lang": "bash",
+    "section": "Restore drill (mandatory)",
+    "context": "And the cloud backup:",
+    "lines": 7
+   }
+  ]
+ },
+ {
+  "chapter": 12,
+  "slug": "network-hygiene",
+  "title": "Chapter 12 \u2014 Fortress III: Network Hygiene",
+  "dir": "chapters/12-network-hygiene",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "VLANs and guest Wi-Fi (the network layer)",
+    "context": "Alternatively, install mDNS reflector on your main router:",
+    "lines": 3
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authelia path",
+    "context": "### Step 1: Create the Authelia compose",
+    "lines": 1
+   },
+   {
+    "file": "03-compose.yml",
+    "lang": "yaml",
+    "section": "The build \u2014 Authelia path",
+    "context": "Create compose.yaml:",
+    "lines": 20
+   },
+   {
+    "file": "04.yml",
+    "lang": "yaml",
+    "section": "The build \u2014 Authelia path",
+    "context": "Create /srv/lab/data/authelia/configuration.yml:",
+    "lines": 31
+   },
+   {
+    "file": "05.yml",
+    "lang": "yaml",
+    "section": "The build \u2014 Authelia path",
+    "context": "Create /srv/lab/data/authelia/usersdatabase.yml:",
+    "lines": 14
+   },
+   {
+    "file": "06.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authelia path",
+    "context": "Generate password hashes:",
+    "lines": 3
+   },
+   {
+    "file": "07.Caddyfile",
+    "lang": "caddy",
+    "section": "The build \u2014 Authelia path",
+    "context": "Update your Caddy config (from Chapter 10 or create new at /srv/lab/data/caddy/Caddyfile):",
+    "lines": 19
+   },
+   {
+    "file": "08.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authelia path",
+    "context": "Restart Caddy:",
+    "lines": 2
+   },
+   {
+    "file": "09.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authelia path",
+    "context": "Start Authelia:",
+    "lines": 3
+   },
+   {
+    "file": "10.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authentik path (alternative)",
+    "context": "If you prefer a fancier UI and group-based policies:",
+    "lines": 1
+   },
+   {
+    "file": "11.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authentik path (alternative)",
+    "context": "Download the official docker-compose:",
+    "lines": 1
+   },
+   {
+    "file": "12-.env",
+    "lang": "bash",
+    "section": "The build \u2014 Authentik path (alternative)",
+    "context": "Edit the .env file:",
+    "lines": 7
+   },
+   {
+    "file": "13.sh",
+    "lang": "bash",
+    "section": "The build \u2014 Authentik path (alternative)",
+    "context": "Start it:",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 13,
+  "slug": "ollama",
+  "title": "Chapter 13 \u2014 The Oracle I: Local AI on Old Hardware",
+  "dir": "chapters/13-ollama",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Linux (GPU or CPU):",
+    "lines": 2
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Raspberry Pi (CPU-only, slow):",
+    "lines": 1
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Ollama is a single daemon. No Docker needed. If you prefer Docker, docker pull ollama/ollama exists, but the bare instal",
+    "lines": 1
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Pull one:",
+    "lines": 1
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "This downloads the model (2\u20135 GB depending on quantization). First time takes a few minutes.",
+    "lines": 1
+   },
+   {
+    "file": "06.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "### Step 3: Run the model locally",
+    "lines": 1
+   },
+   {
+    "file": "07.txt",
+    "lang": "",
+    "section": "The build",
+    "context": "You'll see:",
+    "lines": 1
+   },
+   {
+    "file": "08.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "It worked. Try a longer prompt:",
+    "lines": 1
+   },
+   {
+    "file": "09.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Ollama runs as a local service on port 11434. It's text-only by default. Open WebUI gives you a ChatGPT-like interface.",
+    "lines": 8
+   },
+   {
+    "file": "10-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Or, in Docker Compose at /srv/lab/compose/open-webui/compose.yaml:",
+    "lines": 12
+   },
+   {
+    "file": "11.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "On Linux, replace host.docker.internal with the Docker bridge IP:",
+    "lines": 2
+   },
+   {
+    "file": "12.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Then:",
+    "lines": 3
+   },
+   {
+    "file": "13-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "In Open WebUI, click the three-line menu \u2192 \"Connections\" \u2192 \"Ollama.\" Set the URL to http://host.docker.internal:11434 (o",
+    "lines": 5
+   },
+   {
+    "file": "14.txt",
+    "lang": "",
+    "section": "The build",
+    "context": "Open WebUI has a \"Documents\" section. Upload a PDF, text file, or markdown file. Then start a conversation with:",
+    "lines": 1
+   },
+   {
+    "file": "15.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "\"Connection refused\" from Open WebUI to Ollama \u2192 The bridge IP is wrong. On Linux:",
+    "lines": 1
+   },
+   {
+    "file": "16.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "Model is incredibly slow (1 token/second on GPU) \u2192 The model isn't offloading to the GPU. Run:",
+    "lines": 1
+   },
+   {
+    "file": "17.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "Look for numgpulayers. If it's 0, the model isn't using GPU. Restart ollama with:",
+    "lines": 1
+   },
+   {
+    "file": "18.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "Open WebUI won't start \u2192 Port 3000 is taken, or /srv/lab/data/open-webui doesn't exist. Check:",
+    "lines": 3
+   },
+   {
+    "file": "19.sh",
+    "lang": "bash",
+    "section": "When it breaks",
+    "context": "Model generates garbage \u2192 Some models are weaker. Try a different one. Qwen, Llama, and Gemma are solid. Experiment with",
+    "lines": 2
+   },
+   {
+    "file": "20.sh",
+    "lang": "bash",
+    "section": "Make it good",
+    "context": "Running multiple models: Ollama loads models into VRAM on demand. If you have 16 GB, you can run two 7B models, but they",
+    "lines": 2
+   },
+   {
+    "file": "21-compose.yml",
+    "lang": "yaml",
+    "section": "Make it good",
+    "context": "Or in compose.yaml:",
+    "lines": 4
+   },
+   {
+    "file": "22.sh",
+    "lang": "bash",
+    "section": "Make it good",
+    "context": "Quantization: Models in ollama.com/library are pre-quantized (usually q40 or q4K). If you want better quality and have V",
+    "lines": 1
+   },
+   {
+    "file": "23.sh",
+    "lang": "bash",
+    "section": "Make it good",
+    "context": "Or lower quality for speed:",
+    "lines": 1
+   }
+  ]
+ },
+ {
+  "chapter": 14,
+  "slug": "mcp-bridge",
+  "title": "Chapter 14 \u2014 The Oracle II: Let the AI Run the Lab",
+  "dir": "chapters/14-mcp-bridge",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Option B: Docker (anything with Docker installed)",
+    "lines": 1
+   },
+   {
+    "file": "02-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Create compose.yaml:",
+    "lines": 16
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "",
+    "lines": 2
+   },
+   {
+    "file": "04.json",
+    "lang": "json",
+    "section": "The build",
+    "context": "2. If the file is empty or missing, create it. Add:",
+    "lines": 15
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Claude Code (CLI)",
+    "lines": 8
+   },
+   {
+    "file": "06.txt",
+    "lang": "",
+    "section": "The build",
+    "context": "The assistant will call the MCP tools and respond with something like:",
+    "lines": 8
+   }
+  ]
+ },
+ {
+  "chapter": 15,
+  "slug": "n8n",
+  "title": "Chapter 15 \u2014 The Oracle III: Automations with n8n",
+  "dir": "chapters/15-n8n",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "### Step 1: Compose file for n8n",
+    "lines": 1
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Create .env:",
+    "lines": 8
+   },
+   {
+    "file": "03-compose.yml",
+    "lang": "yaml",
+    "section": "The build",
+    "context": "Create compose.yaml:",
+    "lines": 25
+   },
+   {
+    "file": "04.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 16,
+  "slug": "the-rack",
+  "title": "Chapter 16 \u2014 The Rack: Many Boxes Into One",
+  "dir": "chapters/16-the-rack",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "On node 3 (your backup/storage node):",
+    "lines": 8
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "Install NFS server:",
+    "lines": 5
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "The build",
+    "context": "On node 1 (designate this as the cluster coordinator):",
+    "lines": 2
+   }
+  ]
+ },
+ {
+  "chapter": 17,
+  "slug": "when-it-breaks",
+  "title": "Chapter 17 \u2014 When It Breaks: The Field Guide",
+  "dir": "chapters/17-when-it-breaks",
+  "blocks": [
+   {
+    "file": "01.sh",
+    "lang": "bash",
+    "section": "The universal first three",
+    "context": "Before anything else, from your main computer:",
+    "lines": 3
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "\"One app is down\" \u2014 the container is unhappy",
+    "context": "## \"One app is down\" \u2014 the container is unhappy",
+    "lines": 3
+   },
+   {
+    "file": "03.sh",
+    "lang": "bash",
+    "section": "Disk full",
+    "context": "## Disk full",
+    "lines": 3
+   },
+   {
+    "file": "04.json",
+    "lang": "json",
+    "section": "Disk full",
+    "context": "Logs are eating the disk \u2192 sudo journalctl --vacuum-size=200M, and add to /etc/docker/daemon.json:",
+    "lines": 1
+   },
+   {
+    "file": "05.sh",
+    "lang": "bash",
+    "section": "Slow",
+    "context": "Everything is sluggish, load average is high \u2192 htop. Sort by CPU. If it's Immich ML or a Jellyfin transcode, that's expe",
+    "lines": 3
+   }
+  ]
+ },
+ {
+  "chapter": 18,
+  "slug": "close-the-drawer",
+  "title": "Chapter 18 \u2014 Close the Drawer",
+  "dir": "chapters/18-close-the-drawer",
+  "blocks": [
+   {
+    "file": "01.txt",
+    "lang": "",
+    "section": "Add up the sheet",
+    "context": "Add them up. Write the total here:",
+    "lines": 3
+   },
+   {
+    "file": "02.sh",
+    "lang": "bash",
+    "section": "Keep it running: the ten-minute monthly",
+    "context": "Put this on a calendar. It's the entire maintenance burden.",
+    "lines": 6
+   }
+  ]
+ }
+]

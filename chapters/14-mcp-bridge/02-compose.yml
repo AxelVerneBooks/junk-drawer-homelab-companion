@@ -1,0 +1,16 @@
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:latest
+    container_name: homeassistant
+    ports:
+      - "8123:8123"
+    environment:
+      TZ: "Pacific/Honolulu"
+    volumes:
+      - /srv/lab/data/homeassistant:/config
+      # Allow access to Zigbee/Z-Wave USB sticks
+      - /dev/ttyUSB0:/dev/ttyUSB0:ro
+      # Or for Zigbee on ConBee:
+      # - /dev/ttyACM0:/dev/ttyACM0:ro
+    network_mode: host  # HA needs this for mDNS and some automations
+    restart: unless-stopped

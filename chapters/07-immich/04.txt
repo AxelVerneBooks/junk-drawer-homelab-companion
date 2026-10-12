@@ -1,0 +1,8 @@
+# Where your photos live on disk (point this at your big drive)
+UPLOAD_LOCATION=/srv/lab/media/immich
+
+# Timezone
+TZ=Pacific/Honolulu
+
+# Database password (pick a real one)
+DB_PASSWORD=pick-something-long-and-random

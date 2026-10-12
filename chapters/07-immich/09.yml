@@ -1,0 +1,4 @@
+immich-machine-learning:
+  ...
+  environment:
+    - DISABLE_MACHINE_LEARNING=true

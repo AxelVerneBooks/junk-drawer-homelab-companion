@@ -1,0 +1,40 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    environment:
+      DOMAIN: "https://vault.local"              # change to your hostname
+      SIGNUPS_ALLOWED: "false"                   # disabled after you create your account
+      INVITATIONS_ALLOWED: "false"
+      ADMIN_TOKEN: "${ADMIN_TOKEN}"              # see below
+    volumes:
+      - /srv/lab/data/vaultwarden:/data
+    ports:
+      - "8000:80"                                # plain HTTP from Caddy
+    networks:
+      - vw-net
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy-vw
+    restart: unless-stopped
+    ports:
+      - "443:443"
+      - "443:443/udp"                            # HTTP/3
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      - vw-net
+    environment:
+      DOMAIN: "vault.local"                      # must match above
+
+networks:
+  vw-net:
+    driver: bridge
+
+volumes:
+  caddy-data:
+  caddy-config:

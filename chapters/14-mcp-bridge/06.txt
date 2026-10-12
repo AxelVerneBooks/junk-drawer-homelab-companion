@@ -1,0 +1,8 @@
+Your Home Assistant instance has these integrations:
+- Home Assistant Cloud (cloud)
+- Pi-hole (pi_hole) - 12,543 queries blocked today
+- Immich (integration_example) - 14 photos synced
+- Zigbee (zha) - 8 devices paired: 1 bulb, 3 motion sensors, 2 locks...
+
+Currently active automations: 3
+Last backup: 2 hours ago, 450 MB

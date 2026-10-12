@@ -1,0 +1,17 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - "8096:8096/tcp"
+    volumes:
+      - /srv/lab/data/jellyfin:/config
+      - /srv/lab/media:/media
+    environment:
+      - TZ="Pacific/Honolulu"
+    restart: unless-stopped
+    # For Intel Quick Sync hardware transcoding (see below for setup)
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    group_add:
+      - "109"

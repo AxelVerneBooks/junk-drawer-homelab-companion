@@ -1,0 +1,2 @@
+environment:
+  DOMAIN: "https://drawer-pi.pango-lin.ts.net"  # no more vault.local

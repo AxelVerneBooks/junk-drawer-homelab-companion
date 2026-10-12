@@ -1,0 +1,14 @@
+users:
+  mom:
+    displayname: "Mom"
+    password: "$argon2id$v=19$m=65540,t=3,p=4$hash-here"  # use `docker compose exec authelia authelia crypto hash-password <password>`
+    email: "mom@example.com"
+    groups:
+      - admins
+  
+  kid:
+    displayname: "Kid"
+    password: "$argon2id$v=19$m=65540,t=3,p=4$hash-here"
+    email: "kid@example.com"
+    groups:
+      - users
