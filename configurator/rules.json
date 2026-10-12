@@ -1,0 +1,894 @@
+{
+  "version": "0.1",
+  "generated": "2026-10-11T20:30:00Z",
+  "title": "Junk Drawer Homelab Configurator Rules",
+  "description": "Hardware-to-chapter mapping and placement logic for the Drawer Configurator UI",
+  "inputs": {
+    "hardware": [
+      {
+        "id": "pi2",
+        "label": "Raspberry Pi 2",
+        "cpu_arch": "ARM v7",
+        "ram_gb": 1,
+        "has_gpu": false,
+        "always_on_capable": true
+      },
+      {
+        "id": "pi3",
+        "label": "Raspberry Pi 3",
+        "cpu_arch": "ARM v8",
+        "ram_gb": 1,
+        "has_gpu": false,
+        "always_on_capable": true
+      },
+      {
+        "id": "pi4",
+        "label": "Raspberry Pi 4",
+        "cpu_arch": "ARM v8",
+        "ram_gb": 4,
+        "has_gpu": false,
+        "always_on_capable": true
+      },
+      {
+        "id": "pi5",
+        "label": "Raspberry Pi 5",
+        "cpu_arch": "ARM v8",
+        "ram_gb": 8,
+        "has_gpu": false,
+        "always_on_capable": true
+      },
+      {
+        "id": "laptop_intel_old",
+        "label": "Old Intel Laptop (<8th gen)",
+        "cpu_arch": "x86-64",
+        "ram_gb": 8,
+        "has_gpu": false,
+        "always_on_capable": false
+      },
+      {
+        "id": "laptop_intel_8gen",
+        "label": "Intel Laptop (8th-gen+, with Quick Sync)",
+        "cpu_arch": "x86-64",
+        "ram_gb": 8,
+        "has_gpu": true,
+        "always_on_capable": false
+      },
+      {
+        "id": "laptop_amd",
+        "label": "AMD Laptop",
+        "cpu_arch": "x86-64",
+        "ram_gb": 8,
+        "has_gpu": false,
+        "always_on_capable": false
+      },
+      {
+        "id": "laptop_apple",
+        "label": "Apple Silicon Mac (M1+)",
+        "cpu_arch": "ARM",
+        "ram_gb": 8,
+        "has_gpu": true,
+        "always_on_capable": false
+      },
+      {
+        "id": "desktop_no_gpu",
+        "label": "Old Desktop (no GPU)",
+        "cpu_arch": "x86-64",
+        "ram_gb": 16,
+        "has_gpu": false,
+        "always_on_capable": false
+      },
+      {
+        "id": "desktop_nvidia",
+        "label": "Desktop with NVIDIA GPU",
+        "cpu_arch": "x86-64",
+        "ram_gb": 16,
+        "has_gpu": true,
+        "always_on_capable": false
+      },
+      {
+        "id": "desktop_amd_gpu",
+        "label": "Desktop with AMD GPU",
+        "cpu_arch": "x86-64",
+        "ram_gb": 16,
+        "has_gpu": true,
+        "always_on_capable": false
+      },
+      {
+        "id": "phone_android",
+        "label": "Android Phone",
+        "cpu_arch": "ARM",
+        "ram_gb": 2,
+        "has_gpu": false,
+        "always_on_capable": false
+      },
+      {
+        "id": "phone_iphone",
+        "label": "iPhone (6s+)",
+        "cpu_arch": "ARM",
+        "ram_gb": 2,
+        "has_gpu": false,
+        "always_on_capable": false
+      },
+      {
+        "id": "storage_usb",
+        "label": "USB External Drive",
+        "cpu_arch": null,
+        "ram_gb": 0,
+        "has_gpu": false,
+        "always_on_capable": false
+      },
+      {
+        "id": "storage_nas",
+        "label": "NAS / Network Storage",
+        "cpu_arch": null,
+        "ram_gb": 0,
+        "has_gpu": false,
+        "always_on_capable": true
+      },
+      {
+        "id": "router_managed",
+        "label": "Managed Router (VLAN-capable)",
+        "cpu_arch": null,
+        "ram_gb": 0,
+        "has_gpu": false,
+        "always_on_capable": true
+      }
+    ],
+    "network": [
+      {
+        "id": "router_unknown",
+        "label": "Router model unknown"
+      },
+      {
+        "id": "router_dhcp_reservation",
+        "label": "Can set DHCP reservations"
+      },
+      {
+        "id": "router_vlans",
+        "label": "Can do VLANs"
+      },
+      {
+        "id": "isp_public_ip_no",
+        "label": "ISP blocks port forwarding or no public IP"
+      },
+      {
+        "id": "isp_public_ip_yes",
+        "label": "ISP provides public IP for port forwarding"
+      }
+    ],
+    "goals": [
+      {
+        "id": "ads",
+        "label": "Block ads"
+      },
+      {
+        "id": "movies_tv",
+        "label": "Movies & TV"
+      },
+      {
+        "id": "photos",
+        "label": "Photos (off Google)"
+      },
+      {
+        "id": "passwords",
+        "label": "Password manager"
+      },
+      {
+        "id": "audiobooks",
+        "label": "Audiobooks & Podcasts"
+      },
+      {
+        "id": "remote_access",
+        "label": "Reach it from outside"
+      },
+      {
+        "id": "backups",
+        "label": "Backups"
+      },
+      {
+        "id": "cameras",
+        "label": "Cameras"
+      },
+      {
+        "id": "local_ai",
+        "label": "Local AI (Ollama)"
+      },
+      {
+        "id": "automations",
+        "label": "Automations"
+      },
+      {
+        "id": "smart_home",
+        "label": "Smart home (Home Assistant)"
+      },
+      {
+        "id": "cluster",
+        "label": "Cluster (Proxmox)"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "id": 4,
+      "number": 4,
+      "slug": "pi-hole",
+      "title": "First Light I: Pi-hole on the Pi You Forgot",
+      "what_it_builds": "DNS-level ad blocker for the entire home network",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 0.5,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "ads"
+      ],
+      "compose_files": [
+        "chapters/04-pi-hole/02-compose.yml"
+      ],
+      "env_variables": [
+        "TZ",
+        "FTLCONF_webserver_api_password"
+      ],
+      "subscriptions_replaces": [
+        "DNS filtering / family safe subscriptions"
+      ]
+    },
+    {
+      "id": 5,
+      "number": 5,
+      "slug": "jellyfin",
+      "title": "First Light II: Old Laptop \u2192 Jellyfin",
+      "what_it_builds": "Media server for movies, TV, music (replaces Netflix, Disney+)",
+      "min_requirements": {
+        "cpu_arch": [
+          "x86-64"
+        ],
+        "ram_gb": 2,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "movies_tv"
+      ],
+      "compose_files": [
+        "chapters/05-jellyfin/02-compose.yml"
+      ],
+      "env_variables": [
+        "TZ"
+      ],
+      "subscriptions_replaces": [
+        "Netflix",
+        "Disney+",
+        "Plex Pass",
+        "other streaming services"
+      ]
+    },
+    {
+      "id": 6,
+      "number": 6,
+      "slug": "old-phone",
+      "title": "First Light III: Old Phone \u2192 Camera, Dashboard, or Sensor",
+      "what_it_builds": "Camera feed or home dashboard from old smartphone",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM"
+        ],
+        "ram_gb": 1,
+        "needs_gpu": false,
+        "needs_always_on": false
+      },
+      "goals": [
+        "cameras"
+      ],
+      "compose_files": [],
+      "env_variables": [],
+      "subscriptions_replaces": [
+        "Security camera subscriptions",
+        "smart display subscriptions"
+      ]
+    },
+    {
+      "id": 7,
+      "number": 7,
+      "slug": "immich",
+      "title": "Break Up With Big Tech I: Google Photos \u2192 Immich",
+      "what_it_builds": "Self-hosted photo library with ML search (replaces Google Photos)",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 4,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "photos"
+      ],
+      "compose_files": [
+        "chapters/07-immich/09.yml"
+      ],
+      "env_variables": [
+        "TZ",
+        "DISABLE_MACHINE_LEARNING"
+      ],
+      "subscriptions_replaces": [
+        "Google One Photos",
+        "iCloud+ Photos",
+        "other cloud photo storage"
+      ]
+    },
+    {
+      "id": 8,
+      "number": 8,
+      "slug": "vaultwarden",
+      "title": "Break Up With Big Tech II: Password Manager \u2192 Vaultwarden",
+      "what_it_builds": "Self-hosted Bitwarden-compatible password manager",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 0.5,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "passwords"
+      ],
+      "compose_files": [
+        "chapters/08-vaultwarden/02-compose.yml"
+      ],
+      "env_variables": [
+        "DOMAIN",
+        "SIGNUPS_ALLOWED",
+        "ADMIN_TOKEN"
+      ],
+      "subscriptions_replaces": [
+        "Bitwarden",
+        "1Password",
+        "LastPass"
+      ]
+    },
+    {
+      "id": 9,
+      "number": 9,
+      "slug": "audiobookshelf",
+      "title": "Break Up With Big Tech III: Audiobooks & Podcasts \u2192 Audiobookshelf",
+      "what_it_builds": "Self-hosted audiobook and podcast library",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 0.5,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "audiobooks"
+      ],
+      "compose_files": [
+        "chapters/09-audiobookshelf/03-compose.yml"
+      ],
+      "env_variables": [
+        "TZ"
+      ],
+      "subscriptions_replaces": [
+        "Audible",
+        "Scribd",
+        "Spotify Premium",
+        "Apple Podcasts Premium"
+      ]
+    },
+    {
+      "id": 10,
+      "number": 10,
+      "slug": "tailscale",
+      "title": "Fortress I: Reach It From Anywhere (Tailscale)",
+      "what_it_builds": "Private mesh network for remote access without port forwarding",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 0.03,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "remote_access"
+      ],
+      "compose_files": [],
+      "env_variables": [],
+      "subscriptions_replaces": []
+    },
+    {
+      "id": 11,
+      "number": 11,
+      "slug": "backups",
+      "title": "Fortress II: Backups That Actually Restore",
+      "what_it_builds": "3-2-1 backup strategy (local USB + remote + cloud)",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 0.5,
+        "needs_gpu": false,
+        "needs_always_on": false
+      },
+      "goals": [
+        "backups"
+      ],
+      "compose_files": [],
+      "env_variables": [],
+      "subscriptions_replaces": []
+    },
+    {
+      "id": 12,
+      "number": 12,
+      "slug": "network-hygiene",
+      "title": "Fortress III: Network Hygiene",
+      "what_it_builds": "Network segmentation (VLANs, guest WiFi, access control)",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 1,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [],
+      "compose_files": [
+        "chapters/12-network-hygiene/03-compose.yml"
+      ],
+      "env_variables": [],
+      "subscriptions_replaces": []
+    },
+    {
+      "id": 13,
+      "number": 13,
+      "slug": "ollama",
+      "title": "The Oracle I: Local AI on Old Hardware",
+      "what_it_builds": "Local LLM inference (Llama, Qwen, Gemma) \u2014 no API calls",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 8,
+        "needs_gpu": true,
+        "needs_always_on": false
+      },
+      "goals": [
+        "local_ai"
+      ],
+      "compose_files": [
+        "chapters/13-ollama/10-compose.yml",
+        "chapters/13-ollama/21-compose.yml"
+      ],
+      "env_variables": [
+        "OLLAMA_MODELS"
+      ],
+      "subscriptions_replaces": [
+        "OpenAI API",
+        "Claude API",
+        "other LLM services"
+      ]
+    },
+    {
+      "id": 14,
+      "number": 14,
+      "slug": "mcp-bridge",
+      "title": "The Oracle II: Let the AI Run the Lab",
+      "what_it_builds": "Home Assistant with MCP bridge for AI-driven smart home",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 2,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "smart_home"
+      ],
+      "compose_files": [
+        "chapters/14-mcp-bridge/02-compose.yml"
+      ],
+      "env_variables": [
+        "TZ"
+      ],
+      "subscriptions_replaces": []
+    },
+    {
+      "id": 15,
+      "number": 15,
+      "slug": "n8n",
+      "title": "The Oracle III: Automations with n8n",
+      "what_it_builds": "Visual workflow automation (replaces Zapier, IFTTT, Make)",
+      "min_requirements": {
+        "cpu_arch": [
+          "ARM",
+          "x86-64"
+        ],
+        "ram_gb": 0.5,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "automations"
+      ],
+      "compose_files": [
+        "chapters/15-n8n/03-compose.yml"
+      ],
+      "env_variables": [
+        "TZ",
+        "N8N_HOST",
+        "N8N_PROTOCOL",
+        "WEBHOOK_URL"
+      ],
+      "subscriptions_replaces": [
+        "IFTTT",
+        "Zapier",
+        "Make"
+      ]
+    },
+    {
+      "id": 16,
+      "number": 16,
+      "slug": "the-rack",
+      "title": "The Rack: Many Boxes Into One",
+      "what_it_builds": "Proxmox hypervisor cluster (consolidates infra onto VMs)",
+      "min_requirements": {
+        "cpu_arch": [
+          "x86-64"
+        ],
+        "ram_gb": 16,
+        "needs_gpu": false,
+        "needs_always_on": true
+      },
+      "goals": [
+        "cluster"
+      ],
+      "compose_files": [],
+      "env_variables": [],
+      "subscriptions_replaces": []
+    }
+  ],
+  "rules": [
+    {
+      "priority": 90,
+      "condition": {
+        "hardware": "pi3"
+      },
+      "placement": [
+        {
+          "chapter": 4,
+          "box": "pi3",
+          "why": "Always-on DNS blocker, low power"
+        },
+        {
+          "chapter": 8,
+          "box": "pi3",
+          "why": "Vaultwarden (minimal resources)"
+        },
+        {
+          "chapter": 9,
+          "box": "pi3",
+          "why": "Audiobookshelf library"
+        }
+      ]
+    },
+    {
+      "priority": 95,
+      "condition": {
+        "hardware": "pi4"
+      },
+      "placement": [
+        {
+          "chapter": 4,
+          "box": "pi4",
+          "why": "Primary DNS blocker, always-on"
+        },
+        {
+          "chapter": 7,
+          "box": "pi4",
+          "why": "Immich photo storage (4GB RAM)"
+        },
+        {
+          "chapter": 8,
+          "box": "pi4",
+          "why": "Vaultwarden password vault"
+        },
+        {
+          "chapter": 9,
+          "box": "pi4",
+          "why": "Audiobookshelf media server"
+        },
+        {
+          "chapter": 14,
+          "box": "pi4",
+          "why": "Home Assistant + MCP"
+        },
+        {
+          "chapter": 15,
+          "box": "pi4",
+          "why": "n8n automation engine"
+        }
+      ]
+    },
+    {
+      "priority": 96,
+      "condition": {
+        "hardware": "pi5"
+      },
+      "placement": [
+        {
+          "chapter": 4,
+          "box": "pi5",
+          "why": "DNS blocker (overkill)"
+        },
+        {
+          "chapter": 7,
+          "box": "pi5",
+          "why": "Immich with faster ML"
+        },
+        {
+          "chapter": 13,
+          "box": "pi5",
+          "why": "Ollama local LLM (ARM native)"
+        },
+        {
+          "chapter": 14,
+          "box": "pi5",
+          "why": "Home Assistant smart home"
+        },
+        {
+          "chapter": 15,
+          "box": "pi5",
+          "why": "n8n complex workflows"
+        }
+      ]
+    },
+    {
+      "priority": 80,
+      "condition": {
+        "hardware": "laptop_intel_8gen"
+      },
+      "placement": [
+        {
+          "chapter": 5,
+          "box": "laptop",
+          "why": "Jellyfin with Intel Quick Sync GPU transcoding"
+        },
+        {
+          "chapter": 4,
+          "box": "laptop",
+          "why": "Pi-hole on always-on laptop"
+        },
+        {
+          "chapter": 13,
+          "box": "laptop",
+          "why": "Ollama with Quick Sync acceleration"
+        }
+      ]
+    },
+    {
+      "priority": 70,
+      "condition": {
+        "hardware": "laptop_intel_old"
+      },
+      "placement": [
+        {
+          "chapter": 5,
+          "box": "laptop",
+          "why": "Jellyfin CPU-only (slower, no Quick Sync)"
+        },
+        {
+          "chapter": 4,
+          "box": "laptop",
+          "why": "Pi-hole DNS filtering"
+        }
+      ],
+      "note": "No Quick Sync; CPU transcoding will be slow for 4K"
+    },
+    {
+      "priority": 75,
+      "condition": {
+        "hardware": "laptop_apple"
+      },
+      "placement": [
+        {
+          "chapter": 5,
+          "box": "laptop",
+          "why": "Jellyfin on M1+ (fast ARM CPU)"
+        },
+        {
+          "chapter": 13,
+          "box": "laptop",
+          "why": "Ollama native ARM, GPU acceleration"
+        },
+        {
+          "chapter": 4,
+          "box": "laptop",
+          "why": "Pi-hole DNS"
+        }
+      ]
+    },
+    {
+      "priority": 85,
+      "condition": {
+        "hardware": "desktop_nvidia"
+      },
+      "placement": [
+        {
+          "chapter": 13,
+          "box": "desktop",
+          "why": "Ollama with CUDA GPU (best for LLMs)"
+        },
+        {
+          "chapter": 5,
+          "box": "desktop",
+          "why": "Jellyfin with NVIDIA NVENC"
+        },
+        {
+          "chapter": 7,
+          "box": "desktop",
+          "why": "Immich ML search with CUDA"
+        },
+        {
+          "chapter": 4,
+          "box": "desktop",
+          "why": "Pi-hole (optional)"
+        }
+      ]
+    },
+    {
+      "priority": 75,
+      "condition": {
+        "hardware": "desktop_amd_gpu"
+      },
+      "placement": [
+        {
+          "chapter": 13,
+          "box": "desktop",
+          "why": "Ollama with ROCm GPU"
+        },
+        {
+          "chapter": 5,
+          "box": "desktop",
+          "why": "Jellyfin with AMD encoding"
+        },
+        {
+          "chapter": 7,
+          "box": "desktop",
+          "why": "Immich ML on AMD GPU"
+        }
+      ]
+    },
+    {
+      "priority": 30,
+      "condition": {
+        "hardware": "phone_android"
+      },
+      "placement": [
+        {
+          "chapter": 6,
+          "box": "phone",
+          "why": "IP Webcam source (not a server)"
+        }
+      ]
+    },
+    {
+      "priority": 30,
+      "condition": {
+        "hardware": "phone_iphone"
+      },
+      "placement": [
+        {
+          "chapter": 6,
+          "box": "phone",
+          "why": "Camera feed source (not a server)"
+        }
+      ]
+    },
+    {
+      "priority": 40,
+      "condition": {
+        "hardware": "storage_nas"
+      },
+      "placement": [
+        {
+          "chapter": 11,
+          "box": "nas",
+          "why": "NAS ideal for 3-2-1 backup strategy"
+        },
+        {
+          "chapter": 7,
+          "box": "nas",
+          "why": "Immich can store photos on NAS"
+        }
+      ]
+    },
+    {
+      "priority": 50,
+      "condition": {
+        "hardware": "router_managed"
+      },
+      "placement": [
+        {
+          "chapter": 12,
+          "box": "router",
+          "why": "Network hygiene: VLAN segmentation"
+        }
+      ]
+    }
+  ],
+  "build_order": [
+    {
+      "phase": 1,
+      "name": "Foundation (always first)",
+      "chapters": [
+        3,
+        4
+      ],
+      "why": "Docker basics + Pi-hole DNS foundation"
+    },
+    {
+      "phase": 2,
+      "name": "Core services",
+      "chapters": [
+        5,
+        8,
+        9,
+        10
+      ],
+      "why": "Media, passwords, podcasts, remote access"
+    },
+    {
+      "phase": 3,
+      "name": "Break up with Big Tech",
+      "chapters": [
+        6,
+        7
+      ],
+      "why": "Photos and cameras ecosystem"
+    },
+    {
+      "phase": 4,
+      "name": "Security & backup",
+      "chapters": [
+        11,
+        12
+      ],
+      "why": "Backup strategy + network isolation"
+    },
+    {
+      "phase": 5,
+      "name": "AI & automation",
+      "chapters": [
+        13,
+        14,
+        15
+      ],
+      "why": "Ollama (LLM) \u2192 Home Assistant \u2192 Workflows"
+    },
+    {
+      "phase": 6,
+      "name": "Advanced: Cluster",
+      "chapters": [
+        16
+      ],
+      "why": "Proxmox consolidation (last step)"
+    }
+  ],
+  "prompt_template": "You are configuring a self-hosted homelab from junk drawers and old hardware.\n\nUser Hardware:\n{{selected_hardware}}\n\nUser Goals:\n{{selected_goals}}\n\nNetwork Setup:\n{{network_capabilities}}\n\nBased on 'Junk Drawer Homelab' chapters 4-16, recommend:\n1. Which chapters to build\n2. Which hardware runs each chapter\n3. Build order\n4. Gotchas and conflicts\n\nRespond as JSON:\n{\n  \"recommended_chapters\": [4, 5, ...],\n  \"hardware_assignments\": {\"4\": \"pi4\", \"5\": \"laptop\", ...},\n  \"build_order\": [4, 8, 5, 9, ...],\n  \"warnings\": [\"Pi-hole must be always-on\", ...],\n  \"subscriptions_saved\": \"Netflix, Disney+, Google One, Bitwarden, ...\"\n}\n\nKey insights:\n- Pi-hole (Ch 4): DNS filtering, minimal resources, always-on\n- Jellyfin (Ch 5): Media transcoding \u2192 Intel Quick Sync (8th-gen+) or fast CPU\n- Immich (Ch 7): Photo ML search \u2192 4GB+ RAM, GPU helps\n- Ollama (Ch 13): LOCAL LLM inference \u2192 GPU essential (NVIDIA CUDA > AMD ROCm > CPU)\n- Tailscale (Ch 10): Remote access without port forwarding\n- Home Assistant (Ch 14) + MCP: AI automation, depends on stable always-on\n- n8n (Ch 15): Workflow automation (replaces Zapier, IFTTT)\n- Proxmox (Ch 16): Cluster last (needs 3+ x86 machines with 16GB+ RAM each)\n"
+}
