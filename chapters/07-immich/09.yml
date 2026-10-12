@@ -1,3 +1,4 @@
+# Partial snippet — merge into the immich-machine-learning service in your compose.yml
 immich-machine-learning:
   ...
   environment:
