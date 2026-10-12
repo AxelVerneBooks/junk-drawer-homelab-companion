@@ -1,5 +1,7 @@
-# Partial snippet — merge into the immich-machine-learning service in your compose.yml
-immich-machine-learning:
-  ...
-  environment:
-    - DISABLE_MACHINE_LEARNING=true
+# Partial snippet — add DISABLE_MACHINE_LEARNING=true to the immich-machine-learning service in your compose.yml
+services:
+  immich-machine-learning:
+    image: ghcr.io/immich-app/immich-machine-learning:release
+    # ... (rest of service config unchanged)
+    environment:
+      - DISABLE_MACHINE_LEARNING=true

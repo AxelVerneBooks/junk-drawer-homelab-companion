@@ -1,5 +1,6 @@
 # If that doesn't work, try this in compose.yaml:
 services:
   open-webui:
+    image: ghcr.io/open-webui/open-webui:latest
     # ... rest of config ...
     network_mode: "host"  # lets it reach localhost:11434 directly
