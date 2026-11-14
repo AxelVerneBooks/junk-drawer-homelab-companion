@@ -13,6 +13,12 @@ cd junk-drawer-homelab-companion/chapters/04-pi-hole
 
 Each chapter also has a copy page with one-click copy buttons: **axelverne.com/jd/N** (N = chapter number). The [Drawer Configurator](https://axelverne.com/jd/build) assembles a build order and merged compose for whatever you found in *your* drawer.
 
+## Get the book
+This repo is the free companion code. *The Junk Drawer Homelab* is the guided build itself — eighteen chapters that walk the whole thing end to end.
+
+- Kindle: <https://www.amazon.com/dp/B0HMSF5HRG?tag=greenfairy0d-20>
+- All formats + free sample chapters: <https://axelverne.com/books/junk-drawer-homelab.html>
+
 ## Chapters
 
 | # | Chapter | blocks |
@@ -44,3 +50,7 @@ Each chapter also has a copy page with one-click copy buttons: **axelverne.com/j
 - Build-time notes marked `[BUILD TIME: ...]` in the book are measured on real hardware before release.
 
 Part of [_The MCP Series_](https://axelverne.com): *MCP for Business*, *MCP for the Homelab*, *The Junk Drawer Homelab*.
+
+---
+
+_As an Amazon Associate, Axel Verne earns from qualifying purchases._
